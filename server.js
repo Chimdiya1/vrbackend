@@ -39,7 +39,7 @@ app.use(
     },
   })
 );
-
+app.set("trust proxy", 1); // or true
 app.use(
   rateLimit({
     windowMs: 60_000,
