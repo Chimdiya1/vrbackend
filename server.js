@@ -68,7 +68,7 @@ async function withTimeout(promise, ms) {
   }
 }
 
-async function callOpenAI({ question, userName, userColor }, attemptSignal) {
+async function callOpenAI({ question }, attemptSignal) {
   const developer = `
 You are a friendly VR 101 teacher inside a Unity VR classroom.
 Answer in 1–3 short sentences. Beginner-friendly. No links.
@@ -79,7 +79,7 @@ If unrelated, redirect to VR basics: presence, tracking, locomotion, interaction
     { role: "developer", content: developer },
     {
       role: "user",
-      content: `Student (${userName || "Unknown"}): ${question}`,
+      content: `${question}`,
     },
   ];
 
